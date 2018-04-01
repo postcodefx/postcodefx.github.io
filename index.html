@@ -1,0 +1,1090 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<base href="/postcodefx/" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="description" content="Kenya Postal Codes and Addresses finder, List of Postal Codes, Street addresses in Nairobi,Mombasa,Nakuru,Machakos,Busia,Kakamega,Kisumu and the rest of the 47 counties.">
+    <meta name="keywords" content="national addressing system, nas, postal code, street address, postal code of nairobi, postal code of mombasa, postal code of machakos, postal code of nakuru, postal code of busia, 
+    postal code of kisumu, postal code of kiambu, postal code of vihiga, postal code of bungoma, postal code of siaya, postal code of kisii, postal code of lamu, postal code of garissa, postal code of west pokot, 
+    postal code of bomet, postal code of elgeyo marakwet, postal code of embu, postal code of homa bay, postal code of isiolo, postal code of kakamega,
+    postal code of kajiado, postal code of kilifi, postal code of kericho, postal code of kirinyaga, postal code of embu, postal code of kwale,
+    postal code of meru, postal code of laikipia, postal code of migori, postal code of muranga, postal code of nandi, postal code of narok, postal code of nyamira, 
+    postal code of nyandarua, postal code of nyeri, postal code of taita taveta, postal code of tana river, postal code of tharaka nithi, postal code of trans nzoia, postal code of turkana, 
+    postal code of uasin gishu, postal code of wajir, postal code of mandera, postal code of makueni, postal code of kenya, postal zip code of kenya, 
+    list of postal codes in kenya, send letter to kenya, kenya zip code, postal code, post office in kenya">
+    <meta name="author" content="aqinin kinyanjui @postcodefx">
+
+    <title>Postal Address API Developer Documentation - PostCodeFX Developer</title>
+
+    <!-- Styles -->
+    <link href="api_docs/css/nextdocs.css" rel="stylesheet">
+    <link href="api_docs/css/custom.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
+
+    <!-- Favicons -->    
+    <link rel="icon" href="api_docs/img/postcodefx_location_icon.png">
+    <script src="api_docs/js/nm.js"></script>
+    <script type="text/javascript">
+    	navigation_currentViewUID = "postal_address_api";
+    </script>
+    <style type="text/css">
+    	table {
+		    font-family: arial, sans-serif;
+		    border-collapse: collapse;
+		    width: 100%;
+		    font-size:small;
+		}
+		
+		td{
+		    border: 1px solid #dddddd;		    
+		    text-align: left;
+		    padding: 8px;		    
+		}
+		td:nth-child(odd) {
+		    color: green;
+		}		
+    	tr:nth-child(even) {
+		    background-color: whitesmoke;
+		}
+    </style>
+  </head>
+  <body>
+
+    <header class="site-header navbar-fullwidth navbar-transparent">
+
+      <!-- Top navbar & branding -->
+      <nav class="navbar navbar-default">
+        <div class="container">
+
+          <!-- Toggle buttons and brand -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+
+            <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html">
+			  <img src="api_docs/img/postcodefx_developer.png" alt="logo"></a>
+          </div>
+          <!-- END Toggle buttons and brand -->
+
+          <!-- Top navbar -->
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a style="cursor:pointer" onclick="displayWebPageUI('postal_address_api',navigation_currentViewUID);">Docs</a></li>
+              <li><a style="cursor:pointer" onclick="displayWebPageUI('postal_address_api_reference',navigation_currentViewUID);">Api Reference</a></li>
+              <li><a style="cursor:pointer" href="https://twitter.com/postcodefx" target="_blank">Support</a></li>
+              <li><a style="cursor:pointer" href="https://twitter.com/postcodefx" target="_blank">Contact Us</a></li>
+            </ul>
+          </div>
+          <!-- END Top navbar -->
+
+        </div>
+      </nav>
+      <!-- END Top navbar & branding -->
+
+      <!-- Banner -->
+      <div class="banner banner-full-height overlay-black">
+      	<div class="container text-center">
+      		<h3>Postal Address API </h3>
+      		<p>
+      			<strong>PostCodeFX</strong> Postal Address API is a service that provides physical street postal address data for ecommerce, logistics and general postal addressing.      			
+      		</p>
+          	<br><br>
+          	<br><br>
+          	<p>
+          		<a class="btn btn-white btn-xl btn-outline" style="cursor:pointer" onclick="displayWebPageUI('postal_address_api',navigation_currentViewUID);" role="button"> Getting Started </a>
+          		<a class="btn btn-white btn-xl btn-outline" style="cursor:pointer" href="https://play.google.com/store/apps/details?id=com.postcodefx.wapi" target="_blank" role="button"> Get the demo App </a>
+          	</p>
+          	<p style="font-size:small;"></p>
+        </div>
+
+        <ul class="social-icons">
+          <li><a href="https://twitter.com/postcodefx" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.facebook.com/postcodefx" target="_blank"><i class="fa fa-facebook"></i></a></li>          
+        </ul>
+      </div>
+      <!-- END Banner -->
+
+    </header>
+
+
+    <main class="container" >
+      <div class="row">
+
+        <!-- Sidebar -->
+        <aside class="col-md-3 col-sm-3 sidebar">
+
+          <ul class="sidenav dropable sticky">
+            <li>
+             <a style="cursor:pointer;" onclick="displayWebPageUI('postal_address_api',navigation_currentViewUID);">Overview</a>
+              <ul>
+              	  <li><a href="#postalcode">The Postal Code</a></li>
+	              <li><a href="#sample_address">Sample Address</a></li>
+	              <li><a href="#postal_zone_list">Postal Zones</a></li>
+	              <li><a href="#common_scenarios">Common Scenarios</a></li>
+              </ul>
+            </li>
+            <li>
+              <a style="cursor:pointer;" onclick="displayWebPageUI('postal_address_api_reference',navigation_currentViewUID);">Reference</a>
+              <ul>
+                <li><a href="#postal_zone_reference">Postal Zone</a></li>
+                <li><a href="#postal_sector_reference">Postal Sector</a></li>
+                <li><a href="#postal_area_reference">Postal Area</a></li>
+                <li><a href="#postal_address_reference">Postal Address</a></li>                
+              </ul>
+            </li>
+            <li>
+              <a style="cursor:pointer;" onclick="displayWebPageUI('postal_address_api_uisamples',navigation_currentViewUID);">UI Samples</a>
+              <ul>
+                <li><a href="#search_for_an_address">Search for an Address</a></li>
+                <li><a href="#find a_postal_code">Find a Postal Code</a></li>
+                <li><a href="#distance_between_locations">Distance between locations</a></li>
+                <li><a href="#geocoding">Geocoding</a></li>
+                <li><a href="#statistics">Statistics</a></li>                
+              </ul>
+            </li>
+          </ul>
+
+        </aside>
+        <!-- END Sidebar -->
+
+
+        <!-- Main content -->        
+        <article id="postal_address_api_reference" class="col-md-9 col-sm-9 main-content" style="display:none;" role="main">
+        	<section id="postal_zone_reference">
+        		<h4>Postal Zone</h4>        		
+	          	<p style="font-weight:bold;">Get Postal Zone Info</p>	          		          	
+	          	<p>Request</p>
+	          	<div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">
+	            	<table>
+            			<tr>
+            				<td style="font-weight:bold;">HOST</td>
+            				<td style="color:black;">https://www.postcodefx.com</td>
+            			</tr>
+            			<tr style="background-color:whitesmoke;">
+            				<td style="font-weight:bold;">GET</td>
+            				<td>/api?rqst=postal_zone_info&amp;postalzonecode=NB&amp;key=YOUR_API_KEY</td>
+            			</tr>
+            		</table>
+	            </div>
+	            <br>
+	            <p>Response Fields</p>
+	            <div class="container row panel panel-default" style="margin:0 auto;color:black;width:98%;padding:10px;">
+	            	<table>
+	            		<thead>
+	            			<tr style="font-weight:bold;">
+	            			<td>Name</td>
+	            			<td>Description</td>
+	            			<td>Type</td></tr>
+	            		</thead>
+	            		<tbody>
+		            		<tr>
+		            			<td>postalZone</td>
+		            			<td>The name of the Postal Zone</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalZoneCode</td>
+		            			<td>The code for the Postal Zone</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>total_postal_sectors</td>
+		            			<td>The total Number of Sectors in this county</td>
+		            			<td>int</td>
+		            		</tr>
+		            		<tr>
+		            			<td>lat_lng</td>
+		            			<td>Latitude and Longitude of the Postal Street</td>
+		            			<td>string</td>
+		            		</tr>		            		
+		            	</tbody>
+	            	</table>
+	            </div>
+	            <br>
+	            <p>JSON Response</p>	            
+	            <div class="container row panel panel-default" style="margin:0 auto;width:98%;padding:10px;background-color:whitesmoke;">
+	            	<code class="language-json" data-lang="json" style="background-color:whitesmoke;">
+		            	{
+							"response":"success",
+							"record" : [
+								{
+									"postalZone" : "Nairobi",
+									"postalZoneCode" : "NB",
+									"total_postal_sector" : 290,
+									"lat" : "-1.29090900000000000000",
+									"lng" : "36.86750700000000000000"
+								}
+							]
+		            	}
+		            	</code>
+	            </div>
+        	</section>
+        	<section id="postal_sector_reference">
+        		<h4>Postal Sector</h4>
+	          	<p style="font-weight:bold;">Get Postal Sectors List</p>
+	          	<p>Request</p>	          	
+	          	<div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">
+	            	<table>
+            			<tr>
+            				<td style="font-weight:bold;">HOST</td>
+            				<td style="color:black;">https://www.postcodefx.com</td>
+            			</tr>
+            			<tr>
+            				<td style="font-weight:bold;">GET</td>
+            				<td>/api?rqst=postal_sector_list&amp;postalzonecode=NB&amp;key=YOUR_API_KEY</td>
+            			</tr>
+            		</table>
+	            </div>
+	            <br>
+	            <p>Response Fields</p>	            
+	            <div class="container row panel panel-default" style="margin:0 auto;color:black;width:98%;padding:10px;">
+	            	<table>
+	            		<thead>
+	            			<tr style="font-weight:bold;">
+	            			<td>Name</td>
+	            			<td>Description</td>
+	            			<td>Type</td></tr>
+	            		</thead>
+	            		<tbody>
+	            			<tr>
+		            			<td>postalZone</td>
+		            			<td>The name of the Postal Zone</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalSector</td>
+		            			<td>The name of the Postal Sector</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalSectorCode</td>
+		            			<td>The code of the Postal Sector</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>lat_lng</td>
+		            			<td>Latitude and Longitude of the Postal Street</td>
+		            			<td>string</td>
+		            		</tr>		            		
+		            	</tbody>
+	            	</table>
+	            </div>
+	            <br>
+	            <p>JSON Response</p>	            
+	            <div class="container row panel panel-default" style="margin:0 auto;width:98%;padding:10px;background-color:whitesmoke;">
+	            	<code class="language-json" data-lang="json" style="background-color:whitesmoke;">
+		            	{
+							"response":"success",
+							"list" : [
+								{
+									"postalSector" : "STAREHE",
+									"postalZone" : "NAIROBI",
+									"postalSectorCode" : "NB16",
+									"lat" : "0.0",
+									"lng" : "0.0"
+								}
+							]
+		            	}
+		            	</code>
+	            </div>	            
+	            <br>
+	            <p style="font-weight:bold;">Get Postal Sector Info</p>
+	            <p>Request</p>	          	
+	          	<div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">	            	
+	            	<table>
+	        			<tr>
+	        				<td style="font-weight:bold;">HOST</td>
+	        				<td style="color:black;">https://www.postcodefx.com</td>
+	        			</tr>
+	        			<tr>
+	        				<td style="font-weight:bold;">GET</td>
+	        				<td>
+	        					/api?rqst=postal_sector_info&amp;postalsectorcode=NB16&amp;key=YOUR_API_KEY<br>
+	        				</td>
+	        			</tr>
+	        		</table>
+	            </div>
+	            <br>
+	            <p>Response Fields</p>
+	            <div class="container row panel panel-default" style="margin:0 auto;color:black;width:98%;padding:10px;">
+	            	<table>
+	            		<thead>
+	            			<tr style="font-weight:bold;">
+	            			<td>Name</td>
+	            			<td>Description</td>
+	            			<td>Type</td></tr>
+	            		</thead>
+	            		<tbody>
+		            		<tr>
+		            			<td>postalSector</td>
+		            			<td>The name of the Postal Sector</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalSectorCode</td>
+		            			<td>The code for the Postal Sector</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>total_postal_area</td>
+		            			<td>The total Number of Postal Areas</td>
+		            			<td>int</td>
+		            		</tr>
+		            	</tbody>
+	            	</table>
+	            </div>
+	            <br>
+	            <p>JSON Response</p>	            
+	            <div class="container row panel panel-default" style="margin:0 auto;width:98%;padding:10px;background-color:whitesmoke;">
+	            	<code class="language-json" data-lang="json" style="background-color:whitesmoke;">
+		            	{
+							"response":"success",
+							"record" : [
+								{
+									"postalZone" : "Nairobi",
+									"postalSector" : "Starehe",
+									"postalSectorCode" : "NB16",
+									"total_postal_area" : 0,
+									"lat" : "0.0",
+									"lng" : "0.0"
+								}
+							]
+		            	}
+		            	</code>
+	            </div>
+        	</section>
+        	<section id="postal_area_reference">
+        		<h4>Postal Area</h4>
+	          	<p style="font-weight:bold;">Get Postal Area List</p>
+	          	<p>Request</p>	          	
+	          	<div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">
+            		<table>
+            			<tr>
+            				<td style="font-weight:bold;">HOST</td>
+            				<td style="color:black;">https://www.postcodefx.com</td>
+            			</tr>
+            			<tr>
+            				<td style="font-weight:bold;">GET</td>
+            				<td>/api?rqst=postal_area_list&amp;postalsectorcode=NB16&amp;key=YOUR_API_KEY</td>
+            			</tr>
+            		</table>
+            	</div>
+	            <br>
+	            <p>Response Fields</p>	            
+	            <div class="container row panel panel-default" style="margin:0 auto;color:black;width:98%;padding:10px;">
+	            	<table>
+	            		<thead>
+	            			<tr style="font-weight:bold;">
+	            			<td>Name</td>
+	            			<td>Description</td>
+	            			<td>Type</td></tr>
+	            		</thead>
+	            		<tbody>	            			
+		            		<tr>
+		            			<td>postalArea</td>
+		            			<td>The name of the Postal Area</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalAreaCode</td>
+		            			<td>The code for Postal Area</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalZone</td>
+		            			<td>The name of the Postal Zone</td>
+		            			<td>string</td>
+		            		</tr>		            		
+		            		<tr>
+		            			<td>lat_lng</td>
+		            			<td>Latitude and Longitude of the Postal Street</td>
+		            			<td>string</td>
+		            		</tr>
+		            	</tbody>
+	            	</table>
+	            </div>
+	            <br>
+	            <p>JSON Response</p>	            
+	            <div class="container row panel panel-default" style="margin:0 auto;width:98%;padding:10px;background-color:whitesmoke;">
+	            	<code class="language-json" data-lang="json" style="background-color:whitesmoke;">
+		            	{
+							"response":"success",
+							"record" : [
+								{
+									"postalArea" : "NAIROBI CENTRAL",
+									"postalZone" : "NAIROBI",
+									"postalCode" : "NB16 2",
+									"lat" : "0.0",
+									"lng" : "0.0"
+								}
+							]
+		            	}
+		            	</code>
+	            </div>
+	            <br>
+	            <p style="font-weight:bold;">Get Postal Area Record</p>
+	            <p>Request</p>	          	
+	          	<div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">
+	            	<table>
+            			<tr>
+            				<td style="font-weight:bold;">HOST</td>
+            				<td style="color:black;">https://www.postcodefx.com</td>
+            			</tr>
+            			<tr>
+            				<td style="font-weight:bold;">GET</td>
+            				<td>/api?rqst=postal_area_info&amp;postalareacode=NB16 1&amp;key=YOUR_API_KEY</td>
+            			</tr>
+            		</table>
+	            </div>
+	            <br>
+	            <p>Response Fields</p>
+	            <div class="container row panel panel-default" style="margin:0 auto;color:black;width:98%;padding:10px;">
+	            	<table>
+	            		<thead>
+	            			<tr style="font-weight:bold;">
+	            			<td>Name</td>
+	            			<td>Description</td>
+	            			<td>Type</td></tr>
+	            		</thead>
+	            		<tbody>
+		            		<tr>
+		            			<td>postalArea</td>
+		            			<td>The name of the Postal Area</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalAreaCode</td>
+		            			<td>The code of the Postal Area</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalSector</td>
+		            			<td>The name of the Postal Sector</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalZone</td>
+		            			<td>The name of the Postal Zone</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>total_postal_street</td>
+		            			<td>The total Number of Postal Streets</td>
+		            			<td>int</td>
+		            		</tr>
+		            	</tbody>
+	            	</table>
+	            </div>
+	            <br>
+	            <p>JSON Response</p>	            
+	            <div class="container row panel panel-default" style="margin:0 auto;width:98%;padding:10px;background-color:whitesmoke;">
+	            	<code class="language-json" data-lang="json" style="background-color:whitesmoke;">
+		            	{
+							"response":"success",
+							"streetAddress" : [
+								{
+									"postalArea" : "Nairobi Central",
+									"postalSector" : "Starehe",
+									"postalZone" : "NAIROBI",
+									"postalAreaCode" : "NB16 2",
+									"total_postal_street" : "0"
+								}
+							]
+		            	}
+		            	</code>
+	            </div>
+        	</section>        	
+        	<section id="postal_address_reference">
+        		<h4>Postal Address</h4>        			          	
+	          	<p style="font-weight:bold;">Get Postal Address List</p>
+	          	<p>Request <span style="font-size:small;"><strong>{postalAreaCode}</strong></span></p>	          	
+	          	<div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">
+	            	<table>
+            			<tr>
+            				<td style="font-weight:bold;">HOST</td>
+            				<td style="color:black;">https://www.postcodefx.com</td>
+            			</tr>
+            			<tr>
+            				<td style="font-weight:bold;">GET</td>
+            				<td>/api?rqst=postal_address_list&amp;postalareacode=NB16 2&amp;key=YOUR_API_KEY</td>
+            			</tr>
+            		</table>
+	            </div>
+	            <br>
+	            <p style="font-weight:bold;">Get Postal Address Record</p>
+	            <p>Request <span style="font-size:small;"><strong>{postalCode}</strong></span></p>
+	          	<div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">
+	            	<table>
+            			<tr>
+            				<td style="font-weight:bold;">HOST</td>
+            				<td style="color:black;">https://www.postcodefx.com</td>
+            			</tr>
+            			<tr>
+            				<td style="font-weight:bold;">GET</td>
+            				<td>/api?rqst=postal_address_record&amp;postalcode=NB16 22KS&amp;key=YOUR_API_KEY</td>
+            			</tr>
+            		</table>
+	            </div>
+	            <br>
+	            <p style="font-weight:bold;">Search Postal Address</p>
+	            <p>Request <span style="font-size:small;"><strong>{General Search}</strong></span></p>
+	          	<div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">
+	            	<table>
+            			<tr>
+            				<td style="font-weight:bold;">HOST</td>
+            				<td style="color:black;">https://www.postcodefx.com</td>
+            			</tr>
+            			<tr>
+            				<td style="font-weight:bold;">GET</td>
+            				<td>/api?rqst=search_address<br>
+            				&amp;q={full or partial postalcode | street and county name}<br>
+            				<span style="font-style:italic;color:black;"><strong>For example:</strong> q=NB16 22KS OR q=NB16 2 OR search=Kimathi Street Nairobi</span><br>            				
+            				&amp;key=YOUR_API_KEY<br>            				
+            				</td>
+            			</tr>
+            		</table>
+	            </div>
+	            <br>
+	            <p>Response Fields</p>	            
+	            <div class="container row panel panel-default" style="margin:0 auto;color:black;width:98%;padding:10px;">
+	            	<table>
+	            		<thead>
+	            			<tr style="font-weight:bold;">
+	            			<td>Name</td>
+	            			<td>Description</td>
+	            			<td>Type</td></tr>
+	            		</thead>
+	            		<tbody>
+	            			<tr>
+		            			<td>postalStreet</td>
+		            			<td>The name of the Postal Street</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalArea</td>
+		            			<td>The name of the Postal Area</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalZone</td>
+		            			<td>The name of the Postal Zone</td>
+		            			<td>string</td>
+		            		</tr>
+		            		<tr>
+		            			<td>postalCode</td>
+		            			<td>The Postal Code of a postal street</td>
+		            			<td>string</td>
+		            		</tr>
+
+		            		<tr>
+		            			<td>lat_lng</td>
+		            			<td>Latitude and Longitude of the Postal Code</td>
+		            			<td>string</td>
+		            		</tr>
+		            	</tbody>
+	            	</table>
+	            </div>
+	            <br>
+	            <p>JSON Response</p>	            
+	            <div class="container row panel panel-default" style="margin:0 auto;width:98%;padding:10px;background-color:whitesmoke;">
+	            	<code class="language-json" data-lang="json" style="background-color:whitesmoke;">
+		            	{
+							"response":"success",
+							"postalAddress" : [
+								{
+									"postalStreet" : "KIMATHI STREET",
+									"postalArea" : "NAIROBI CENTRAL",
+									"postalZone" : "NAIROBI",
+									"postalCode" : "NB16 22KS",
+									"lat" : "0.0",
+									"lng" : "0.0"
+								}
+							]
+		            	}
+		            	</code>
+	            </div>
+        	</section>
+        </article>
+        <article id="postal_address_api_uisamples" class="col-md-9 col-sm-9 main-content" style="display:none;" role="main">
+        	<section>
+        		<h4>Search for an Address</h4>
+        	</section>
+        </article>
+        <article id="postal_address_api" class="col-md-9 col-sm-9 main-content" style="display:block;" role="main">
+          <header id="postal_address_api_overview">
+            <h3>Overview</h3>
+            <p>The Postal Address API is a HTTP based API that you can use to programmatically query physical addressing data held in our database. The 
+            Postal Address API works with any programming language that has HTTP library. </p>
+
+            <ol class="toc">
+              <li><a href="#postalcode">The Postal Code</a></li>
+              <li><a href="#sample_address">Sample Address</a></li>
+              <li><a href="#postal_zone_list">Postal Zones</a></li>
+              <li><a href="#common_scenarios">Common Scenarios</a></li>
+            </ol>
+          </header>
+
+          <section id="postalcode">          	
+            <h4>The Postal Code</h4>
+			<p>A postal code for those unfamiliar with the word helps to identify a physical street address in a simple short code. Our postal code developed as part of our Postal Addressing System (Patent Pending: GB1408969.2) is an alphanumeric code that follows the following format:</p>
+			<p><strong>AANN NNNAA </strong></p>
+			<p>A = ISO basic Latin alphabet A-Z</p>
+			<p>N = Numeral 1 to 9</p>
+			<p>The postal code identifies the Postal Zone, Postal Sector, Postal Area and a Postal Street of a region in a country.</p>
+			<img src="api_docs/img/postalcode_format_design.png" alt="postalcode format" width="472" height="299" 
+				style="max-width:100%;height:auto;" />
+			<p><strong>Possible Postal Code formats are: </strong></p>
+			<p>AANN NNNAA   |    AANN NNAA   |    AAN NNNAA    |    AAN NNAA</p>			
+			<br>
+          	<h4 id="sample_address">Case Project: Kenya</h4>
+        	<p>Given a postal code <strong>NB16 22KS</strong> for Kimathi Street in Nairobi Kenya, the units of the postal code would identify</p>
+			<ul>
+				<li>NB as the Postal Zone Code of NAIROBI county,</li>
+				<li>16 as the Postal Sector Code of STAREHE sub-county,</li>
+				<li>2 as the Postal Area Code of NAIROBI CENTRAL ward,</li>
+				<li>2 as the Street Code Differentiator for street name KIMATHI STREET and</li>
+				<li>KS as the Street Code for KIMATHI STREET located within NAIROBI CENTRAL Postal Area boundaries.</li>
+			</ul>
+			<p>As a developer you can query every element of the postal code in the PostCodeFX database using the Postal Address API to provided you with postal address data associated with it.</p>
+			
+            <div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">
+            	<table>
+        			<tr>
+        				<td style="font-weight:bold;">HOST</td>
+        				<td style="color:black;">https://www.postcodefx.com</td>
+        			</tr>
+        			<tr>
+        				<td style="font-weight:bold;">GET</td>
+        				<td>
+        					/api?rqst=search_address&amp;q=NB16 22KS&amp;key=YOUR_API_KEY<br>OR<br>
+        					/api?rqst=search_address&amp;q=Kimathi Street Nairobi&amp;key=YOUR_API_KEY<br>
+        				</td>
+        			</tr>
+        		</table>
+            </div>
+            <br>
+            <p>JSON Response</p>	            
+            <div class="container row panel panel-default" style="margin:0 auto;width:98%;padding:10px;background-color:whitesmoke;">
+            	<code class="language-json" data-lang="json" style="background-color:whitesmoke;">
+	            	{
+						"response":"success",
+						"postalAddress" : [
+							{
+								"postalStreet" : "KIMATHI STREET",
+								"postalArea" : "NAIROBI CENTRAL",
+								"postalZone" : "NAIROBI",
+								"postalCode" : "NB16 22KS",
+								"lat" : "0.0",
+								"lng" : "0.0"
+							}
+						]
+	            	}
+	            	</code>
+            </div>
+          </section>
+
+          <section id="postal_zone_list">
+            <h4>Postal Zones</h4>
+			<div class="row">
+				<table>
+				<thead>
+					<tr style="font-weight:bold;">
+					<td width="38"></td>
+					<td width="185"><strong>County Name</strong></td>
+					<td width="200"><strong>Code</strong></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					<td width="38">1</td>
+					<td width="185">BARINGO</td>
+					<td width="200">BR</td>
+					</tr>
+					<tr>
+					<td width="38">2</td>
+					<td width="185">BOMET</td>
+					<td width="200">BM</td>
+					</tr>
+					<tr>
+					<td width="38">3</td>
+					<td width="185">BUNGOMA</td>
+					<td width="200">BG</td>
+					</tr>
+					<tr>
+					<td width="38">4</td>
+					<td width="185">BUSIA</td>
+					<td width="200">BS</td>
+					</tr>
+					<tr>
+					<td width="38">5</td>
+					<td width="185">ELGEYO MARAKWET</td>
+					<td width="200">EM</td>
+					</tr>
+					<tr>
+					<td width="38">6</td>
+					<td width="185">EMBU</td>
+					<td width="200">EB</td>
+					</tr>
+					<tr>
+					<td width="38">7</td>
+					<td width="185">GARISSA</td>
+					<td width="200">GR</td>
+					</tr>
+					<tr>
+					<td width="38">8</td>
+					<td width="185">HOMA BAY</td>
+					<td width="200">HB</td>
+					</tr>
+					<tr>
+					<td width="38">9</td>
+					<td width="185">ISIOLO</td>
+					<td width="200">SL</td>
+					</tr>
+					<tr>
+					<td width="38">10</td>
+					<td width="185">KAJIADO</td>
+					<td width="200">KJ</td>
+					</tr>
+					<tr>
+					<td width="38">11</td>
+					<td width="185">KAKAMEGA</td>
+					<td width="200">KK</td>
+					</tr>
+					<tr>
+					<td width="38">12</td>
+					<td width="185">KIAMBU</td>
+					<td width="200">KA</td>
+					</tr>
+					<tr>
+					<td width="38">13</td>
+					<td width="185">KILIFI</td>
+					<td width="200">KL</td>
+					</tr>
+					<tr>
+					<td width="38">14</td>
+					<td width="185">KERICHO</td>
+					<td width="200">KR</td>
+					</tr>
+					<tr>
+					<td width="38">15</td>
+					<td width="185">KIRINYAGA</td>
+					<td width="200">KG</td>
+					</tr>
+					<tr>
+					<td width="38">16</td>
+					<td width="185">KISII</td>
+					<td width="200">KS</td>
+					</tr>
+					<tr>
+					<td width="38">17</td>
+					<td width="185">KISUMU</td>
+					<td width="200">KM</td>
+					</tr>
+					<tr>
+					<td width="38">18</td>
+					<td width="185">KITUI</td>
+					<td width="200">KT</td>
+					</tr>
+					<tr>
+					<td width="38">19</td>
+					<td width="185">KWALE</td>
+					<td width="200">KW</td>
+					</tr>
+					<tr>
+					<td width="38">20</td>
+					<td width="185">LAIKIPIA</td>
+					<td width="200">LK</td>
+					</tr>
+					<tr>
+					<td width="38">21</td>
+					<td width="185">LAMU</td>
+					<td width="200">LM</td>
+					</tr>
+					<tr>
+					<td width="38">22</td>
+					<td width="185">MACHAKOS</td>
+					<td width="200">MK</td>
+					</tr>
+					<tr>
+					<td width="38">23</td>
+					<td width="185">MAKUENI</td>
+					<td width="200">MN</td>
+					</tr>
+					<tr>
+					<td width="38">24</td>
+					<td width="185">MANDERA</td>
+					<td width="200">MD</td>
+					</tr>
+					<tr>
+					<td width="38">25</td>
+					<td width="185">MARSABIT</td>
+					<td width="200">MT</td>
+					</tr>
+					<tr>
+					<td width="38">26</td>
+					<td width="185">MERU</td>
+					<td width="200">ME</td>
+					</tr>
+					<tr>
+					<td width="38">27</td>
+					<td width="185">MIGORI</td>
+					<td width="200">MG</td>
+					</tr>
+					<tr>
+					<td width="38">28</td>
+					<td width="185">MOMBASA</td>
+					<td width="200">MB</td>
+					</tr>
+					<tr>
+					<td width="38">29</td>
+					<td width="185">MURANGA</td>
+					<td width="200">MA</td>
+					</tr>
+					<tr>
+					<td width="38">30</td>
+					<td width="185">NAIROBI</td>
+					<td width="200">NB</td>
+					</tr>
+					<tr>
+					<td width="38">31</td>
+					<td width="185">NAKURU</td>
+					<td width="200">NK</td>
+					</tr>
+					<tr>
+					<td width="38">32</td>
+					<td width="185">NANDI</td>
+					<td width="200">ND</td>
+					</tr>
+					<tr>
+					<td width="38">33</td>
+					<td width="185">NAROK</td>
+					<td width="200">NR</td>
+					</tr>					
+					<tr>
+					<td width="38">34</td>
+					<td width="185">NYAMIRA</td>
+					<td width="200">NM</td>
+					</tr>
+					<tr>
+					<td width="38">35</td>
+					<td width="185">NYANDARUA</td>
+					<td width="200">NA</td>
+					</tr>
+					<tr>
+					<td width="38">36</td>
+					<td width="185">NYERI</td>
+					<td width="200">NY</td>
+					</tr>
+					<tr>
+					<td width="38">37</td>
+					<td width="185">SAMBURU</td>
+					<td width="200">SB</td>
+					</tr>
+					<tr>
+					<td width="38">38</td>
+					<td width="185">SIAYA</td>
+					<td width="200">SY</td>
+					</tr>
+					<tr>
+					<td width="38">39</td>
+					<td width="185">TAITA TAVETA</td>
+					<td width="200">TT</td>
+					</tr>
+					<tr>
+					<td width="38">40</td>
+					<td width="185">TANA RIVER</td>
+					<td width="200">TR</td>
+					</tr>
+					<tr>
+					<td width="38">41</td>
+					<td width="185">THARAKA NITHI</td>
+					<td width="200">TN</td>
+					</tr>
+					<tr>
+					<td width="38">42</td>
+					<td width="185">TRANS NZOIA</td>
+					<td width="200">TZ</td>
+					</tr>
+					<tr>
+					<td width="38">43</td>
+					<td width="185">TURKANA</td>
+					<td width="200">TK</td>
+					</tr>
+					<tr>
+					<td width="38">44</td>
+					<td width="185">UASIN GISHU</td>
+					<td width="200">UG</td>
+					</tr>
+					<tr>
+					<td width="38">45</td>
+					<td width="185">VIHIGA</td>
+					<td width="200">VH</td>
+					</tr>
+					<tr>
+					<td width="38">46</td>
+					<td width="185">WAJIR</td>
+					<td width="200">WJ</td>
+					</tr>
+					<tr>
+					<td width="38">47</td>
+					<td width="185">WEST POKOT</td>
+					<td width="200">WP</td>
+					</tr>
+				</tbody>
+				</table>
+            </div>            	
+          </section>
+          <section id="common_scenarios">
+          	<h4>Common Scenarios</h4>
+          	<p>There are many scenarios that you can use the Postal Address API to solve problems or to supplement other data. The Postal Address API 
+          	has several resources that can be used in many ways to build solutions solving many logistic or location problems.</p>
+          	<p>Here are some scenarios where The Postal Address API can be useful:</p>
+          	<hr>
+          	<h5>What is My Address</h5>
+          	<p>For a delivery company to locate a customer address, they would ask the customer to provide a precise description of their physical location. In this scenario a search form could be provided where a customer would enter the name of their street and county or 
+          	 If they know their postal code (<em>as provided by postcodefx</em>) they would enter the postal code and a precise address would be returned. If a partial postal code is entered a list of addresses would be returned in response, then the customer would choose their exact address from the list.</p>
+          	<br>
+          	<h5>Resources you can use</h5>
+          	<br>
+            <p style="font-weight:bold;">Get Postal Address Record</p>
+            <p>Request <span style="font-size:small;"><strong>{postalCode}</strong></span></p>
+          	<div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">
+            	<table>
+        			<tr>
+        				<td style="font-weight:bold;">HOST</td>
+        				<td style="color:black;">https://www.postcodefx.com</td>
+        			</tr>
+        			<tr>
+        				<td style="font-weight:bold;">GET</td>
+        				<td>/api?rqst=postal_address_record&amp;postalcode=NB16 22KS&amp;key=YOUR_API_KEY</td>
+        			</tr>
+        		</table>
+            </div>
+            <br>
+            <p style="font-weight:bold;">Search Postal Address</p>
+            <p>Request <span style="font-size:small;"><strong>{General Search}</strong></span></p>
+          	<div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">
+            	<table>
+        			<tr>
+        				<td style="font-weight:bold;">HOST</td>
+        				<td style="color:black;">https://www.postcodefx.com</td>
+        			</tr>
+        			<tr>
+        				<td style="font-weight:bold;">GET</td>
+        				<td>/api?rqst=search_address<br>
+        				&amp;q={full or partial postalcode | street and county name}<br>
+        				<span style="font-style:italic;color:black;"><strong>For example:</strong> q=NB16 22KS OR q=NB16 2 OR search=Kimathi Street Nairobi</span><br>            				
+        				&amp;key=YOUR_API_KEY<br>            				
+        				</td>
+        			</tr>
+        		</table>
+            </div>
+
+            <br>
+            <p>JSON Response</p>	            
+           	<div class="container row panel panel-default" style="margin:0 auto;width:98%;padding:10px;background-color:whitesmoke;">
+            	<code class="language-json" data-lang="json" style="background-color:whitesmoke;">
+	            	{
+						"response":"success",
+						"streetAddress" : [
+							{
+								"postalStreet" : "KIMATHI STREET",
+								"postalArea" : "NAIROBI CENTRAL",
+								"postalZone" : "NAIROBI",
+								"postalCode" : "NB16 22KS",
+								"lat" : "0.0",
+								"lng" : "0.0"
+							}
+						]
+	            	}
+	            	</code>
+            </div>
+            <br>
+            <h5>What is My Postal Code</h5>
+          	<p>To identify a postal code for a named street, you supply the name of street and its county, and a result of one or more addresses would be returned.</p>
+          	<br>
+          	<h5>Resource to use</h5>
+          	<div class="container row panel panel-default" style="margin:0 auto;color:olivedrab;width:98%;padding:10px;">
+            	<table>
+        			<tr>
+        				<td style="font-weight:bold;">HOST</td>
+        				<td style="color:black;">https://www.postcodefx.com</td>
+        			</tr>
+        			<tr>
+        				<td style="font-weight:bold;">GET</td>
+        				<td>
+        					/api?rqst=search_address&amp;q=Kimathi Street Nairobi&amp;key=YOUR_API_KEY<br>
+        				</td>
+        			</tr>
+        		</table>
+            </div>
+            <br>
+            <p>JSON Response</p>	            
+            <div class="container row panel panel-default" style="margin:0 auto;width:98%;padding:10px;background-color:whitesmoke;">
+            	<code class="language-json" data-lang="json" style="background-color:whitesmoke;">
+	            	{
+						"response":"success",
+						"postalAddress" : [
+							{
+								"postalStreet" : "KIMATHI STREET",
+								"postalArea" : "NAIROBI CENTRAL",
+								"postalZone" : "NAIROBI",
+								"postalCode" : "NB16 22KS",
+								"lat" : "0.0",
+								"lng" : "0.0"
+							}
+						]
+	            	}
+	            	</code>
+            </div>
+          </section>                    
+        </article>
+        <!-- END Main content -->
+      </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <p>Copyright &copy; 2017. All right reserved</p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <ul class="footer-menu">
+              <li><a href="https://twitter.com/postcodefx" target="_blank" >Support</a></li>
+              <li><a href="https://twitter.com/postcodefx" target="_blank" >Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+
+    <!-- Scripts -->
+    <script src="api_docs/js/nextdocs.js"></script>
+    <script src="api_docs/js/custom.js"></script>
+
+  </body>
+
+</html>
+
+
+
